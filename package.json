@@ -1,0 +1,21 @@
+{
+  "name": "btcarb",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "bitstamp": "~0.1.3",
+    "mtgox": "~1.0.1",
+    "underscore": "~1.5.2",
+    "cheerio": "~0.12.4",
+    "request": "~2.29.0",
+    "moving-average": "0.0.4",
+    "colors": "~0.6.2"
+  }
+}
