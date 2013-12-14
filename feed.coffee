@@ -6,6 +6,16 @@ module.exports = ->
 	sources = new events.EventEmitter()
 	sources.data = {}
 
+	gap = (v) ->
+		buy = v.bids[0]?[0][0]
+		ask = v.asks[0]?[0][0]
+		if buy? and ask?
+			(ask - buy) / buy * 100 / v.fee * 100
+		else
+			0
+	sources.on 'update', (name,data) ->
+		data.gap = gap data
+
 	feed = (worker,interval = 1000) ->
 		cycle = ->
 			worker (err,name,result) ->

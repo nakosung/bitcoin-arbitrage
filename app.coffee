@@ -15,6 +15,7 @@ feed markets.mtgox('JPY')
 feed markets.bitstamp()
 feed markets.korbit()
 feed markets.btcchina()
+feed markets.btce()
 # feed dummy 'A', '100 usd', '100 usd', 0.5
 # feed dummy 'B', '100 usd', '100 usd', 0.5
 

@@ -33,12 +33,15 @@ module.exports = dump = (Spread,timeInterval) ->
 			O.last = fmtN_sig(vv.last,8) + fmt('',16)
 			O.ma = x
 
+	sorted_keys = _.sortBy _.keys(final), (k) -> sources.data[k].gap
+
 			# console.log fmt(k), fmt(kk), x.join(''), fmtN(vv.last)
-	console.log fmt(''), (_.keys(final).map (x) -> fmt(x,24)).join('')
-	for k,v of final
+	console.log fmt(''), (sorted_keys.map (x) -> fmt(x,24)).join('')
+	sorted_keys.forEach (k) ->
+		v = final[k]
 		line = fmt(k)
 		ma_lines = timeInterval.map -> fmt('')
-		_.keys(final).forEach (f) ->
+		sorted_keys.forEach (f) ->
 			vv = v[f] 
 			if vv?
 				line += vv.last
@@ -52,5 +55,6 @@ module.exports = dump = (Spread,timeInterval) ->
 	console.log ''
 	console.log ''
 
-	for k,v of sources.data
-		console.log fmt(k), 'ask:', fmt(v.asks[0]?[0].join(''),20), 'bid:', fmt(v.bids[0]?[0].join(''),20)
+	sorted_keys.forEach (k) ->
+		v = sources.data[k]
+		console.log fmt(k), 'ask:', fmt(v.asks[0]?[0].join(''),20), 'bid:', fmt(v.bids[0]?[0].join(''),20), 'gap/fee:', fmt (Math.floor(v.gap) + '%')

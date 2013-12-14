@@ -17,6 +17,7 @@
     "request": "~2.29.0",
     "moving-average": "0.0.4",
     "colors": "~0.6.2",
-    "korbit": "0.0.0"
+    "korbit": "0.0.0",
+    "btce": "~0.4.3"
   }
 }
