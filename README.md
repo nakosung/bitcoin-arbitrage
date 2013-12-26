@@ -29,6 +29,7 @@ Markets
 * bitstamp
 * korbit
 * btcchina
+* btc-e
 
 
 Donation
